@@ -1,0 +1,8 @@
+/.venv
+/pycache/*
+/*.build
+/*.dist
+/*.onefile-build
+/src
+*.cmd
+config.json
