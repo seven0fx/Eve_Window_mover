@@ -45,8 +45,6 @@ config_file = 'config.json'
 
 default_settings = {'Links': 0, 'Oben': 0, 'Breite': 1024, 'Höhe': 800}
 
-def write_config(data: dict[str, int]) -> None:
-    ...
 
 def find_windows(search_string: str) -> list[tuple[int, str, tuple[int, int, int, int]]]:
     """Durchsucht alle sichtbaren Fenster nach einem Teilstring im Titel."""
