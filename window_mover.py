@@ -67,7 +67,7 @@ def find_windows(search_string: str) -> list[tuple[int, str, tuple[int, int, int
             coords = (rect.left, rect.top, rect.right, rect.bottom)
 
             # Falls Suchbegriff im Titel existiert, Handle, Titel und Koordinaten speichern
-            if search_string.lower() in window_title.lower() and coords[0] > 0:
+            if search_string.lower() in window_title.lower() and coords[0] >= 0:
                 found_windows.append((hwnd, window_title, coords))
                 
         return True # Weiteres Suchen erlauben
@@ -163,7 +163,7 @@ class Main(ctk.CTk):
             var = ctk.StringVar(self, value=value)
             entry = ctk.CTkEntry(self.settingsFrame, textvariable=var, width=55)
             entry.bind("<Return>", self.on_enter_callback)
-            entry.bind("<FocusOut>", self.on_enter_callback)
+            #entry.bind("<FocusOut>", self.on_enter_callback)
             entry.grid(row=row, column=1, **self.style)
 
             # In ein Dictionary speichern, damit wir sie leicht finden können
